@@ -1,22 +1,20 @@
 # CityParser
 Read information from the textual representation of the directory and decompose the data into a City model with fields.
+Task Description
 
+It is necessary to implement the Main class using java.util.Scanner, read the information from the text view of the reference book and decompose the data into a City model with fields:
 
-Описание задачи
+name - city name
+region - region
+district - federal district
+population - the number of city residents
+foundation - foundation date or first mention
+The resulting list of City objects must be output to the console.
 
-Необходимо реализовать класс Main, используя java.util.Scanner, прочесть информацию из текстового представления справочника и разложить данные в модель City с полями:
+An example of the result obtained:
 
-name – наименование города
-region - регион
-district – федеральный округ
-population – количество жителей города
-foundation – дата основания или первое упоминание
-Полученный список объектов City нужно вывести в консоль.
+City{name='Adygeysk', region='Adygea', district='South', population=12248, foundation='1973'}
 
-Пример полученного результата:
+City{name='Maikop', region='Adygea', district='South', population=144246, foundation='1857'}
 
-City{name='Адыгейск', region='Адыгея', district='Южный', population=12248, foundation='1973'}
-
-City{name='Майкоп', region='Адыгея', district='Южный', population=144246, foundation='1857'}
-
-City{name='Горно-Алтайск', region='Алтай', district='Сибирский', population=56928, foundation='1830'} 
+City{name='Gorno-Altaysk', region='Altai', district='Siberian', population=56928, foundation='1830'}
