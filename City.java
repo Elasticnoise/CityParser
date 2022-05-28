@@ -19,6 +19,14 @@ public class City {
         this.foundation = foundation;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
     @Override
     public String toString() {
         return "City{" +
