@@ -4,13 +4,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class CityUtils {
 
-    public static void parse() throws IOException {
-        ArrayList<City> cities = new ArrayList<>();
+    public static List<City> parse() throws IOException {
+        List<City> cities = new ArrayList<>();
         try {
             Path path = Paths.get("src/com/company/city_ru.csv");
             Scanner scanner = new Scanner(path);
@@ -19,10 +18,10 @@ public class CityUtils {
             while (scanner.hasNextLine())
                 cities.add(parseLine(scanner.nextLine()));
             scanner.close();
-            cities.forEach(System.out::println);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        return cities;
     }
 
     private static City parseLine(String line) {
@@ -37,5 +36,15 @@ public class CityUtils {
         String foundation = scanner.hasNext()?scanner.next():"null";
         scanner.close();
         return new City(id, name, region, district, population, foundation);
+    }
+
+    public static void SortByCityName(List<City> list) {
+        Comparator<City> comparator = Comparator.comparing(City::getName);
+        list.sort(comparator);
+    }
+
+    public static void CityAndDistrictSort(List<City> list) {
+        Comparator<City> comparator = Comparator.comparing(City::getDistrict).thenComparing(City::getName);
+        list.sort(comparator);
     }
 }
