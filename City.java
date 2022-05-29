@@ -27,6 +27,18 @@ public class City {
         return district;
     }
 
+    public int getPopulation() {
+        return population;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
     @Override
     public String toString() {
         return "City{" +
